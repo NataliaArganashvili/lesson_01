@@ -3,6 +3,5 @@ class Smartphone:
         self.mark = mark
         self.model = model
         self.number = number
-        print("Я создался")
 
     
