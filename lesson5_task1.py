@@ -9,5 +9,6 @@ for x in range (5):
     driver.find_element(By.XPATH, "//button[text()='Add Element']").click()
 
 driver.find_elements(By.XPATH, "//button[text()='Delete']")
+list_len = len(driver.find_elements(By.XPATH, "//button[text()='Delete']"))
+print(f'Длина списка: {list_len}')
 
-sleep(5)
