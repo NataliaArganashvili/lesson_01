@@ -22,9 +22,6 @@ Email.send_keys("test@skypro.com")
 Phone_number = driver.find_element(By.CSS_SELECTOR, '[name="phone"]')
 Phone_number.send_keys("+7985899998787")
 
-#Zip_code = driver.find_element(By.CSS_SELECTOR, '[name="zip-code"]')
-#Zip_code.send_keys("Иван")
-
 City = driver.find_element(By.CSS_SELECTOR, '[name="city"]')
 City.send_keys("Москва")
 
@@ -37,10 +34,13 @@ Job_position.send_keys("QA")
 Company = driver.find_element(By.CSS_SELECTOR, '[name="company"]')
 Company.send_keys("SkyPro")
 
-driver.find_element(By.TAG_NAME, 'button').click()
+button = driver.find_element(By.CSS_SELECTOR, "button").click()
+
 
 WebDriverWait(driver, 30).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, '.alert py-2 alert-danger'))
 )
-company_color = Company.get_attribute("style")
-print(company_color)
+
+Zip_code = driver.find_element(By.CSS_SELECTOR, '["#zip-code"]')
+a = Zip_code.get_attribute("style")
+print(a)
