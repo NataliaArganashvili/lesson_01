@@ -43,44 +43,32 @@ WebDriverWait(driver, 30).until(
 )
 
 def test_form():
-    Zip_code = driver.find_element(By.CSS_SELECTOR, '#zip-code')
-    color_zip_code = Zip_code.get_attribute("style")
+    zip_code_color = driver.find_element(By.ID, "zip-code").get_attribute("class")
+    assert "danger" in zip_code_color
+
+    first_name_color = driver.find_element(By.ID, "first-name").get_attribute("class")
+    assert "success" in first_name_color
     
-    First_name_colored = driver.find_element(By.CSS_SELECTOR, '#first-name')
-    color_first_name = First_name_colored.get_attribute("style")
-    
-    last_name_colored = driver.find_element(By.CSS_SELECTOR, '#last-name')
-    color_last_name = last_name_colored.get_attribute("style")
+    last_name_color = driver.find_element(By.ID, "last-name").get_attribute("class")
+    assert "success" in last_name_color
 
-    address_colored = driver.find_element(By.CSS_SELECTOR, '#address')
-    color_address = address_colored.get_attribute("style")
+    address_color = driver.find_element(By.ID, "address").get_attribute("class")
+    assert "success" in address_color
 
-    email_colored = driver.find_element(By.CSS_SELECTOR, '#e-mail')
-    color_email = email_colored.get_attribute("style")
+    email_color = driver.find_element(By.ID, "e-mail").get_attribute("class")
+    assert "success" in email_color
 
-    phone_number_colored = driver.find_element(By.CSS_SELECTOR, '#phone')
-    color_phone_number = phone_number_colored.get_attribute("style")
+    phone_number_color = driver.find_element(By.ID, "phone").get_attribute("class")
+    assert "success" in phone_number_color
 
-    city_colored = driver.find_element(By.CSS_SELECTOR, '#city')
-    color_city = city_colored.get_attribute("style")
+    city_color = driver.find_element(By.ID, "city").get_attribute("class")
+    assert "success" in city_color
 
-    country_colored = driver.find_element(By.CSS_SELECTOR, '#country')
-    color_country = country_colored.get_attribute("style")
+    country_color = driver.find_element(By.ID, "country").get_attribute("class")
+    assert "success" in country_color
 
-    job_position_colored = driver.find_element(By.CSS_SELECTOR, '#job-position')
-    color_job_position = job_position_colored.get_attribute("style")
+    job_position_color = driver.find_element(By.ID, "job-position").get_attribute("class")
+    assert "success" in job_position_color
 
-    company_colored = driver.find_element(By.CSS_SELECTOR, '#company')
-    color_company = company_colored.get_attribute("style")
-
-
-    assert color_zip_code == "rgba(255, 0, 0, 1)"
-    assert color_first_name == "rgba(0, 128, 0, 1)"
-    assert color_last_name == "rgba(0, 128, 0, 1)"
-    assert color_address == "rgba(0, 128, 0, 1)"
-    assert color_email == "rgba(0, 128, 0, 1)"
-    assert color_phone_number == "rgba(0, 128, 0, 1)"
-    assert color_city == "rgba(0, 128, 0, 1)"
-    assert color_country == "rgba(0, 128, 0, 1)"
-    assert color_job_position == "rgba(0, 128, 0, 1)"
-    assert color_company == "rgba(0, 128, 0, 1)"
+    company_color = driver.find_element(By.ID, "company").get_attribute("class")
+    assert "success" in company_color
