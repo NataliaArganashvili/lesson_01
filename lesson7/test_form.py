@@ -4,7 +4,6 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 driver = webdriver.Chrome()
 
 from pages_form.main_page import MainPage
-from pages_form.second_page import SecondPage
 
 def test_form():
     main_page = MainPage(driver)
@@ -19,18 +18,17 @@ def test_form():
     main_page.fill_in_company("SkyPro")
     main_page.click_submit()
 
-    second_page = SecondPage(driver)
-    second_page.waiter()
-    zip_code_color = second_page.get_zip_code_color()
-    first_name_color = second_page.get_first_name_color()
-    last_name_color = second_page.get_last_name_color()
-    address_color = second_page.get_address_color()
-    email_color = second_page.get_email_color()
-    phone_number_color = second_page.get_phone_number_color()
-    city_color = second_page.get_city_color()
-    country_color = second_page.get_country_color()
-    job_position_color = second_page.get_job_position_color()
-    company_color = second_page.get_company_color()
+    main_page.waiter()
+    zip_code_color = main_page.get_zip_code_color()
+    first_name_color = main_page.get_first_name_color()
+    last_name_color = main_page.get_last_name_color()
+    address_color = main_page.get_address_color()
+    email_color = main_page.get_email_color()
+    phone_number_color = main_page.get_phone_number_color()
+    city_color = main_page.get_city_color()
+    country_color = main_page.get_country_color()
+    job_position_color = main_page.get_job_position_color()
+    company_color = main_page.get_company_color()
 
     assert "danger" in zip_code_color
     assert "success" in first_name_color
