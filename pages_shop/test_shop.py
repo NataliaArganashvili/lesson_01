@@ -1,13 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
-
-driver = webdriver.Chrome()
-
 from pages_shop.main_page import MainPage
 from pages_shop.products_page import ProductsPage
 from pages_shop.cart_page import CartPage
 from pages_shop.checkout_page import CheckoutPage
 from pages_shop.overview_page import OverviewPage
+
+driver = webdriver.Chrome()
 
 def test_shop():
     main_page = MainPage(driver)
